@@ -75,7 +75,7 @@ const weddingData = {
     ],
     accommodations: [
         {name: 'Hotel Uba', address: 'Uba Calea Turzii 187, Cluj-Napoca 400491', phone: '0748 050 198'},
-        {name: 'W San Francisco', address: '181 3rd St, San Francisco, CA 94103', phone: '(415) 777-5300'},
+        {name: 'Hotel Optiune 2', address: '181 3rd St, San Francisco, CA 94103', phone: '(415) 777-5300'},
     ],
 };
 
@@ -138,7 +138,7 @@ function WeddingWebsite() {
                 {/* Details Section */}
                 <Container maxWidth="lg" sx={{py: 8}} id="details">
                     <Typography variant="h2" gutterBottom align="center" sx={{mb: 4, color: 'primary.main'}}>
-                        Wedding Details
+                        Locatii
                     </Typography>
                     <Grid container spacing={4}>
                         <Grid item xs={12} md={6}>
@@ -151,7 +151,7 @@ function WeddingWebsite() {
                                 <CardContent>
                                     <Typography variant="h3" gutterBottom color="primary">
                                         <LocationOn color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                                        Ceremony
+                                        Cununia religioasa
                                     </Typography>
                                     <Typography variant="h5" gutterBottom>
                                         {weddingData.weddingLocation.name}
@@ -187,7 +187,7 @@ function WeddingWebsite() {
                                 <CardContent>
                                     <Typography variant="h3" gutterBottom color="primary">
                                         <Restaurant color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                                        Reception
+                                        Receptia
                                     </Typography>
                                     <Typography variant="h5" gutterBottom>
                                         {weddingData.receptionLocation.name}
@@ -221,7 +221,7 @@ function WeddingWebsite() {
                     <Container maxWidth="md">
                         <Typography variant="h2" gutterBottom align="center" sx={{mb: 4, color: 'primary.main'}}>
                             <Schedule color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                            Schedule
+                            Program
                         </Typography>
                         <Paper elevation={3} sx={{p: 4, bgcolor: 'white'}}>
                             {weddingData.schedule.map((item, index) => (
@@ -258,7 +258,7 @@ function WeddingWebsite() {
                                         <Typography variant="body1" paragraph>{hotel.phone}</Typography>
                                         <Button variant="outlined" color="primary"
                                                 href={`https://maps.google.com/?q=${hotel.address}`} target="_blank">
-                                            View on Map
+                                            Vezi locatia
                                         </Button>
                                     </CardContent>
                                 </Card>
