@@ -16,7 +16,7 @@ const IntroSection = () => {
             <Box
                 sx={{
                     flex: 1,
-                    pl: 8,
+                    pl: { xs: 4, md: 8 },
                     pr: 4,
                     py: 4,
                     display: 'flex',

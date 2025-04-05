@@ -76,7 +76,7 @@ const DetailsSection = ({ weddingData }) => {
                             <CardContent>
                                 <Typography variant="h3" gutterBottom color="primary">
                                     <Restaurant color="primary" sx={{ mr: 1, verticalAlign: 'middle' }} />
-                                    Receptia
+                                    Recepția
                                 </Typography>
                                 <Typography variant="h5" gutterBottom>
                                     {weddingData.receptionLocation.name}
