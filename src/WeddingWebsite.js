@@ -1,23 +1,16 @@
 /* eslint-disable */
-import React from 'react';
-import {
-    AppBar,
-    Box,
-    Button,
-    Card,
-    CardContent,
-    Container,
-    Divider,
-    Grid,
-    IconButton,
-    Link,
-    Paper,
-    ThemeProvider,
-    Toolbar,
-    Typography,
-    createTheme
-} from '@mui/material';
-import {Menu as MenuIcon, Favorite, Schedule, LocationOn, Hotel, Restaurant} from '@mui/icons-material';
+import React, {useEffect, useState} from 'react';
+import {AppBar, Box, Button, createTheme, IconButton, ThemeProvider, Toolbar, Typography} from '@mui/material';
+import {Menu as MenuIcon} from '@mui/icons-material';
+import HeroSection from "./HeroSection";
+import InfoSection from "./InfoSection";
+import ScheduleSection from "./ScheduleSection";
+import WeddingDrawer from "./WeddingDrawer";
+import DetailsSection from "./DetailsSection";
+import RSVPSection from "./RSVPSection";
+import FooterSection from "./FooterSection";
+import IntroSection from "./IntroSection";
+
 
 // Custom theme
 const theme = createTheme({
@@ -73,215 +66,84 @@ const weddingData = {
         {time: '16:00', event: 'Petrecerea'},
         {time: '23:00', event: 'Focul de artificii & Tort'},
     ],
-    accommodations: [
-        {name: 'Hotel Uba', address: 'Uba Calea Turzii 187, Cluj-Napoca 400491', phone: '0748 050 198'},
-        {name: 'Hotel Optiune 2', address: '181 3rd St, San Francisco, CA 94103', phone: '(415) 777-5300'},
-    ],
+
 };
 
 function WeddingWebsite() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleDrawer = (open) => () => {
+        setMobileMenuOpen(open);
+    };
+
+    const [showMenu, setShowMenu] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowMenu(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{flexGrow: 1, bgcolor: 'background.default', minHeight: '100vh'}}>
                 {/* Header */}
-                <AppBar position="static" color="primary" elevation={0}>
-                    <Toolbar>
-                        <IconButton edge="start" color="inherit" aria-label="menu" sx={{mr: 2, display: {sm: 'none'}}}>
-                            <MenuIcon/>
-                        </IconButton>
-                        <Typography variant="h6" component="div" sx={{flexGrow: 1, color: 'white'}}>
-                            {weddingData.brideAndGroom}
-                        </Typography>
-                        <Box sx={{display: {xs: 'none', sm: 'block'}}}>
-                            <Button color="inherit" href="#home" sx={{color: 'white'}}>Home</Button>
-                            <Button color="inherit" href="#details" sx={{color: 'white'}}>Locatii</Button>
-                            <Button color="inherit" href="#schedule" sx={{color: 'white'}}>Orar</Button>
-                            <Button color="inherit" href="#accommodations" sx={{color: 'white'}}>Cazari</Button>
-                        </Box>
-                    </Toolbar>
-                </AppBar>
+                {showMenu && (
+                    <AppBar
+                        position="fixed"
+                        color="transparent"
+                        elevation={0}
+                        sx={{
+                            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                            transition: 'opacity 0.5s ease-in-out',
+                            opacity: showMenu ? 1 : 0,
+                        }}
+                    >
+                        <Toolbar>
+                            <IconButton
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{mr: 2, display: {sm: 'none'}}}
+                                onClick={toggleDrawer(true)}
+                            >
+                                <MenuIcon/>
+                            </IconButton>
+
+                            <Typography variant="h6" component="div" sx={{flexGrow: 1, color: 'white'}}>
+                                {weddingData.brideAndGroom}
+                            </Typography>
+                            <Box sx={{display: {xs: 'none', sm: 'block'}}}>
+                                <Button color="inherit" href="#home" sx={{color: 'white'}}>Home</Button>
+                                <Button color="inherit" href="#intro" sx={{color: 'white'}}>Intro</Button>
+                                <Button color="inherit" href="#details" sx={{color: 'white'}}>Locații</Button>
+                                <Button color="inherit" href="#schedule" sx={{color: 'white'}}>Program</Button>
+                                <Button color="inherit" href="#info" sx={{color: 'white'}}>Informații</Button>
+                                <Button color="inherit" href="#rsvp" sx={{color: 'white'}}>Confirmări</Button>
+                                {/*<Button color="inherit" href="#accommodations" sx={{color: 'white'}}>Cazari</Button>*/}
+                            </Box>
+                        </Toolbar>
+                    </AppBar>
+                )}
+                <WeddingDrawer open={mobileMenuOpen} onClose={toggleDrawer(false)}/>
+
 
                 {/* Hero Section */}
-                <Box
-                    id="home"
-                    sx={{
-                        backgroundImage: 'url("https://source.unsplash.com/random/1600x900/?wedding")',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        height: '70vh',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexDirection: 'column',
-                        textAlign: 'center',
-                        p: 4,
-                    }}
-                >
-                    <Paper elevation={3} sx={{p: 4, bgcolor: 'rgba(255, 255, 255, 0.9)', borderRadius: 2}}>
-                        <Typography variant="h1" component="h1"
-                                    sx={{fontSize: {xs: '2.5rem', md: '4rem'}, color: 'primary.main'}}>
-                            {weddingData.brideAndGroom}
-                        </Typography>
-                        <Typography variant="h3" component="h2"
-                                    sx={{mt: 2, fontSize: {xs: '1.5rem', md: '2rem'}, color: 'text.primary'}}>
-                            <p>Impreună cu pãrintii: Camelia si Petruc Cotoc</p>
-                            <p>Ana si Voicu Bara si nasii Xenia si Andrei Dascalu </p>
-                            <p>Vă invităm să ne fiti alături la celebrarea căsătoriei! </p>
-                        </Typography>
-                        <Typography variant="h3" component="h2"
-                                    sx={{mt: 2, fontSize: {xs: '1.5rem', md: '2rem'}, color: 'primary.main'}}>
-                            {weddingData.date}
-                        </Typography>
-                    </Paper>
-                </Box>
-
+                <HeroSection/>
+                <IntroSection/>
                 {/* Details Section */}
-                <Container maxWidth="lg" sx={{py: 8}} id="details">
-                    <Typography variant="h2" gutterBottom align="center" sx={{mb: 4, color: 'primary.main'}}>
-                        Locatii
-                    </Typography>
-                    <Grid container spacing={4}>
-                        <Grid item xs={12} md={6}>
-                            <Card raised sx={{
-                                height: '100%',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                bgcolor: 'background.paper'
-                            }}>
-                                <CardContent>
-                                    <Typography variant="h3" gutterBottom color="primary">
-                                        <LocationOn color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                                        Cununia religioasa
-                                    </Typography>
-                                    <Typography variant="h5" gutterBottom>
-                                        {weddingData.weddingLocation.name}
-                                    </Typography>
-                                    <Typography variant="body1" color="text.secondary" paragraph>
-                                        {weddingData.weddingLocation.address}
-                                    </Typography>
-                                    <Box sx={{width: '100%', height: '300px', overflow: 'hidden', mb: 2}}>
-                                        <iframe
-                                            title="Wedding Location"
-                                            width="100%"
-                                            height="100%"
-                                            frameBorder="0"
-                                            src={weddingData.weddingLocation.mapUrl}
-                                            allowFullScreen
-                                        ></iframe>
-                                    </Box>
-                                    <Button variant="contained" color="primary"
-                                            href={`https://maps.google.com/?q=${weddingData.weddingLocation.address}`}
-                                            target="_blank">
-                                        Get Directions
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Card raised sx={{
-                                height: '100%',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                bgcolor: 'background.paper'
-                            }}>
-                                <CardContent>
-                                    <Typography variant="h3" gutterBottom color="primary">
-                                        <Restaurant color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                                        Receptia
-                                    </Typography>
-                                    <Typography variant="h5" gutterBottom>
-                                        {weddingData.receptionLocation.name}
-                                    </Typography>
-                                    <Typography variant="body1" color="text.secondary" paragraph>
-                                        {weddingData.receptionLocation.address}
-                                    </Typography>
-                                    <Box sx={{width: '100%', height: '300px', overflow: 'hidden', mb: 2}}>
-                                        <iframe
-                                            title="Reception Location"
-                                            width="100%"
-                                            height="100%"
-                                            frameBorder="0"
-                                            src={weddingData.receptionLocation.mapUrl}
-                                            allowFullScreen
-                                        ></iframe>
-                                    </Box>
-                                    <Button variant="contained" color="primary"
-                                            href={`https://maps.google.com/?q=${weddingData.receptionLocation.address}`}
-                                            target="_blank">
-                                        Get Directions
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                </Container>
-
-                {/* Schedule Section */}
-                <Box sx={{bgcolor: 'rgba(85, 107, 47, 0.1)', py: 8}} id="schedule">
-                    <Container maxWidth="md">
-                        <Typography variant="h2" gutterBottom align="center" sx={{mb: 4, color: 'primary.main'}}>
-                            <Schedule color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                            Program
-                        </Typography>
-                        <Paper elevation={3} sx={{p: 4, bgcolor: 'white'}}>
-                            {weddingData.schedule.map((item, index) => (
-                                <React.Fragment key={index}>
-                                    <Grid container spacing={2} sx={{py: 2}}>
-                                        <Grid item xs={4} sm={3}>
-                                            <Typography variant="h6" color="primary">{item.time}</Typography>
-                                        </Grid>
-                                        <Grid item xs={8} sm={9}>
-                                            <Typography variant="h6">{item.event}</Typography>
-                                        </Grid>
-                                    </Grid>
-                                    {index < weddingData.schedule.length - 1 &&
-                                        <Divider sx={{bgcolor: 'rgba(85, 107, 47, 0.2)'}}/>}
-                                </React.Fragment>
-                            ))}
-                        </Paper>
-                    </Container>
-                </Box>
-
-                {/* Accommodations Section */}
-                <Container maxWidth="md" sx={{py: 8}} id="accommodations">
-                    <Typography variant="h2" gutterBottom align="center" sx={{mb: 4, color: 'primary.main'}}>
-                        <Hotel color="primary" sx={{mr: 1, verticalAlign: 'middle'}}/>
-                        Cazari
-                    </Typography>
-                    <Grid container spacing={4}>
-                        {weddingData.accommodations.map((hotel, index) => (
-                            <Grid item xs={12} sm={6} key={index}>
-                                <Card raised sx={{bgcolor: 'background.paper'}}>
-                                    <CardContent>
-                                        <Typography variant="h5" gutterBottom>{hotel.name}</Typography>
-                                        <Typography variant="body1" paragraph>{hotel.address}</Typography>
-                                        <Typography variant="body1" paragraph>{hotel.phone}</Typography>
-                                        <Button variant="outlined" color="primary"
-                                                href={`https://maps.google.com/?q=${hotel.address}`} target="_blank">
-                                            Vezi locatia
-                                        </Button>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Container>
+                <DetailsSection weddingData={weddingData}/>
+                <ScheduleSection/>
+                <InfoSection/>
+                <RSVPSection/>
 
                 {/* Footer */}
-                <Box sx={{bgcolor: 'primary.main', color: 'white', py: 4, textAlign: 'center'}}>
-                    <Container maxWidth="lg">
-                        <Typography variant="h6" gutterBottom>
-                            {weddingData.brideAndGroom}
-                        </Typography>
-                        <Typography variant="body1">
-                            We look forward to celebrating with you on {weddingData.date}
-                        </Typography>
-                        <Typography variant="body2" sx={{mt: 2}}>
-                            © {new Date().getFullYear()} • Made with <Favorite
-                            sx={{fontSize: '0.8rem', verticalAlign: 'middle'}}/> for our special day
-                        </Typography>
-                    </Container>
-                </Box>
+                <FooterSection/>
+
             </Box>
         </ThemeProvider>
     );
