@@ -15,7 +15,7 @@ const DetailsSection = ({ weddingData }) => {
         <Box id="details" sx={{ bgcolor: '#f9f2dc', py: 8 }}>
             <Container maxWidth="lg">
                 <Typography variant="h2" gutterBottom align="center" sx={{ mb: 4, color: 'primary.main' }}>
-                    Locatii
+                    Locații
                 </Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
@@ -32,7 +32,7 @@ const DetailsSection = ({ weddingData }) => {
                             <CardContent>
                                 <Typography variant="h3" gutterBottom color="primary">
                                     <LocationOn color="primary" sx={{ mr: 1, verticalAlign: 'middle' }} />
-                                    Cununia religioasa
+                                    Cununia religioasă
                                 </Typography>
                                 <Typography variant="h5" gutterBottom>
                                     {weddingData.weddingLocation.name}

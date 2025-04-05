@@ -53,7 +53,7 @@ const weddingData = {
     date: '17 August, 2025',
     weddingLocation: {
         name: 'Biserica Sf. Apostol Toma',
-        address: 'Calea Dorobantilor 102 Cluj-Napoca',
+        address: 'Calea Dorobanților 102 Cluj-Napoca',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.3889088231995!2d23.614411476141523!3d46.77694054490075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c172775e93d%3A0xdc44757297098edf!2sSt.%20Thomas%20Church!5e0!3m2!1sen!2sro!4v1742226029149!5m2!1sen!2sro',
     },
     receptionLocation: {

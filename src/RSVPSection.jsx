@@ -19,10 +19,10 @@ const RSVPSection = () => {
                     sx={{width: '100%', maxWidth: 400, mx: 'auto', borderRadius: 2, mb: 6}}
                 />
                 <Typography variant="subtitle1" sx={{fontSize: '1rem', letterSpacing: 1}}>
-                    VĂ RUGĂM SĂ CONFIRMAȚI PREZENȚA PÂNĂ LA
+                    VĂ RUGĂM SĂ CONFIRMAȚI PREZENȚA PÂNĂ LA DATA DE
                 </Typography>
                 <Typography variant="h6" sx={{fontWeight: 'bold', mb: 6}}>
-                    DATA DE 15 IULIE 2025
+                   15 IULIE 2025
                 </Typography>
             </Container>
         </Box>
