@@ -29,21 +29,23 @@ const HeroSection = () => {
     return (
         <ThemeProvider theme={theme}>
             <Box id={'home'}
-                sx={{
-                    backgroundImage: `url(${Poza3})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    height: '100vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    color: 'text.primary',
-                    px: 2,
-                    textShadow: '0 2px 6px rgba(0,0,0,0.6)',
-                    position: 'relative',
-                }}
+                 sx={{
+                     backgroundImage: `url(${Poza3})`,
+                     backgroundSize: 'cover',
+                     backgroundPosition: 'center',
+                     height: '100vh',
+                     display: 'flex',
+                     flexDirection: 'column',
+                     justifyContent: { xs: 'flex-start', md: 'center' },
+                     alignItems: 'center',
+                     textAlign: 'center',
+                     color: 'text.primary',
+                     px: 2,
+                     pt: { xs: '22vh', md: 0 },
+                     textShadow: '0 2px 6px rgba(0,0,0,0.6)',
+                     position: 'relative',
+                 }}
+
             >
                 <Typography variant="h1">Cătălina & Valentin</Typography>
                 <Typography variant="h2" sx={{ mt: 2 }}>17•08•2025</Typography>

@@ -21,7 +21,7 @@ const InfoSection = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={4} textAlign="center">
                         <Typography variant="h3" sx={{ fontWeight: 700 }}>
-                            INFORMATII
+                            INFORMAȚII
                         </Typography>
                         <Box
                             component="img"
