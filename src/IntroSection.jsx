@@ -39,7 +39,7 @@ const IntroSection = () => {
                     }}
                 >
                     Împreună cu părinții Camelia și Petru Cotoc, Ana și Voicu Bara și nașii Xenia și Andrei Dascălu, vă
-                    invităm să ne fiți alături la <strong>Celebraraea Căsătoriei!</strong>
+                    invităm să ne fiți alături la <strong>Celebrarea Căsătoriei!</strong>
                 </Typography>
                 <Typography variant="h4" sx={{mt: 3, textAlign: {xs: 'center', md: 'left'}}}>
                     <strong>17.08.2025</strong>
