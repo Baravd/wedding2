@@ -38,7 +38,7 @@ const IntroSection = () => {
                         minHeight: {md: '6.6em'}, // enough space for ~3 lines of text
                     }}
                 >
-                    Împreună cu părinții Camelia și Petru Cotoc, Ana și Voicu Bara și nașii Xenia și Andrei Dascălu, vă
+                    Împreună cu părinții Camelia și Petruc Cotoc, Ana și Voicu Bara și nașii Xenia și Andrei Dascălu, vă
                     invităm să ne fiți alături la <strong>Celebrarea Căsătoriei!</strong>
                 </Typography>
                 <Typography variant="h4" sx={{mt: 3, textAlign: {xs: 'center', md: 'left'}}}>
