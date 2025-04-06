@@ -48,7 +48,7 @@ const InfoSection = () => {
                         <Box mb={4}>
                             <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>TRANSPORT</Typography>
                             <Typography variant="body1" paragraph>
-                                Pentru deplasarea dintre Cununia Religioasă și Petrecere, vă recomandăm cu drag să folosiți aplicațiile <strong>Bolt</strong> sau <strong>Uber</strong>. Sunt cele mai comode variante, mai ales dacă vreți să lăsați deoparte grija parcării sau întrebarea clasică „Cine conduce înapoi la cazare?”
+                                Pentru deplasarea dintre Cununia Religioasă și Petrecere, vă recomandăm să folosiți aplicațiile <strong>Bolt</strong> sau <strong>Uber</strong>. Sunt cele mai comode variante, mai ales dacă vreți să lăsați deoparte grija parcării sau întrebarea clasică „Cine conduce înapoi la cazare?”
                             </Typography>
                             <Typography variant="body1">
                                 Așa, toată lumea se poate bucura liniștită de un pahar de prosecco… și de ce nu, de multe cocktailuri delicioase!
