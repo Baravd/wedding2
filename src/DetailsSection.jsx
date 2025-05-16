@@ -53,7 +53,7 @@ const DetailsSection = ({ weddingData }) => {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    href={`https://maps.google.com/?q=${weddingData.weddingLocation.address}`}
+                                    href={weddingData.weddingLocation.directionsUrl}
                                     target="_blank"
                                 >
                                     Get Directions
@@ -97,7 +97,7 @@ const DetailsSection = ({ weddingData }) => {
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    href={`https://maps.google.com/?q=${weddingData.receptionLocation.address}`}
+                                    href={weddingData.receptionLocation.directionsUrl}
                                     target="_blank"
                                 >
                                     Get Directions

@@ -55,18 +55,19 @@ const weddingData = {
         name: 'Biserica Sf. Apostol Toma',
         address: 'Calea Dorobanților 102 Cluj-Napoca',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.3889088231995!2d23.614411476141523!3d46.77694054490075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c172775e93d%3A0xdc44757297098edf!2sSt.%20Thomas%20Church!5e0!3m2!1sen!2sro!4v1742226029149!5m2!1sen!2sro',
+        directionsUrl: 'https://www.google.com/maps/place/Biserica+Sf.+Apostol+Toma/@46.7769405,23.6144115,17z/data=!3m1!4b1!4m6!3m5!1s0x47490c172775e93d:0xdc44757297098edf!8m2!3d46.7769405!4d23.6169864!16s%2Fg%2F11c1npn5_n'
     },
     receptionLocation: {
         name: 'The Barn',
         address: 'Sat Gheorgheni 530, Cluj 407272',
         mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.4875629552744!2d23.734404676137387!3d46.69611395040655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47497315da6f0d79%3A0x715bcd0dee8505a2!2sThe%20Barn!5e0!3m2!1sen!2sro!4v1747400327788!5m2!1sen!2sro',
+        directionsUrl: 'https://www.google.com/maps/place/The+Barn/@46.696114,23.7344047,17z/data=!3m1!4b1!4m6!3m5!1s0x47497315da6f0d79:0x715bcd0dee8505a2!8m2!3d46.6961103!4d23.7369796!16s%2Fg%2F11y2ft_pxb?entry=ttu'
     },
     schedule: [
         {time: '14:00', event: 'Cununia religioasa'},
         {time: '16:00', event: 'Petrecerea'},
         {time: '23:00', event: 'Focul de artificii & Tort'},
     ],
-
 };
 
 function WeddingWebsite() {
