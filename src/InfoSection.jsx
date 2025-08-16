@@ -53,6 +53,15 @@ const InfoSection = () => {
                             <Typography variant="body1">
                                 Așa, toată lumea se poate bucura liniștită de un pahar de prosecco… și de ce nu, de multe cocktailuri delicioase!
                             </Typography>
+                            <Typography variant="body1" sx={{ mt: 2, fontWeight: 600 }}>
+                                Taxiuri locale:
+                            </Typography>
+                            <Typography variant="body2">
+                                Nova Taxi – telefon: <a href="tel:+40264949">(+4) 0264 949</a>
+                            </Typography>
+                            <Typography variant="body2">
+                                Diesel Taxi – telefon: <a href="tel:+40264946">(+4) 0264 946</a>
+                            </Typography>
                         </Box>
 
                         <Divider sx={{ borderColor: 'text.primary', mb: 4 }} />
